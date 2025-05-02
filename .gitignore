@@ -1,0 +1,7 @@
+myproject.zip
+env/
+myproject/models/*.h5
+
+*.h5
+*.h5
+*.zip

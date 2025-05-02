@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Crop Disease Prediction{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Crop Disease Predictor</h2>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="cropType" class="form-label">Select Crop Type:</label>
+                    {{ form.crop_type }}
+                </div>
+                <div class="mb-3">
+                    <label for="imageUpload" class="form-label">Upload or Capture Crop Image:</label>
+                    <input type="file" name="image" id="imageUpload" class="form-control" accept="image/*" capture="environment">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Predict</button>
+            </form>
+
+            {% if image_url %}
+                <div class="mt-4 text-center">
+                    <h5>Uploaded Image:</h5>
+                    <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid rounded">
+                </div>
+            {% endif %}
+
+            {% if prediction %}
+                <div class="alert alert-success mt-4">
+                    <h5 class="alert-heading">Prediction Result</h5>
+                    <p><strong>Crop:</strong> {{ prediction.crop }}</p>
+                    <p><strong>Disease:</strong> {{ prediction.disease }}</p>
+                    <p><strong>Confidence:</strong> {{ prediction.confidence }}</p>
+                    <p><strong>Description:</strong> {{ prediction.description }}</p>
+                    {% if prediction.treatment %}
+                        <p><strong>Treatment:</strong> {{ prediction.treatment }}</p>
+                    {% endif %}
+                    {% if show_sell_button %}
+                        <button class="btn btn-success mt-3 w-100" onclick="sellCrop()">Sell</button>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if error %}
+                <div class="alert alert-danger mt-4">
+                    {{ error }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function sellCrop() {
+        window.location.href = "{% url 'register_farmer' %}";
+    }
+</script>
+{% endblock %}

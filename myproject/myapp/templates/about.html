@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+    
+    <h1 class="text-center mb-4">About Our Project</h1>
+    <p class="text-center">
+        Our project, <strong>Crop Disease Predictor</strong>, leverages advanced machine learning techniques to help farmers identify crop diseases from images. 
+        By simply uploading a photo of the crop, users can receive predictions about the disease, its description, and possible treatments. 
+        This tool aims to empower farmers with timely information to improve crop health and productivity.
+    </p>
+
+    <div class="card mb-3">
+        <img src="{% static 'images/shanta1.jpeg' %}" class="card-img-top" style="width: 100%; height: 600px; object-fit: cover;">
+        <div class="card-body">
+            <h5 class="card-title">Mrs. SHANTA KALLUR(Mentor)</h5>
+            <p class="card-text">
+                Mrs. Shanta Kallur is pursuing her Ph.D. in Natural Language Processing from VTU and holds an M.Tech in Computer Science with distinction.
+                She has co-authored a paper on mental health prediction using Machine Learning at IEEE GCAT 2023.
+                As our mentor, she guided us in applying NLP and ML techniques to build AgriNova AI, helping us design intelligent systems for solving real-time agricultural problems.
+            </p>
+            
+            <a href="https://kleit.ac.in/assets/docs/faculty/computer-science-engineering/Mrs.%20SHANTA%20KALLUR.pdf" class="btn btn-primary">To know more</a>
+        </div>
+    </div>
+
+    <h2 class="text-center mt-5 mb-4">Meet Our Team</h2>
+    <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/megha.jpeg' %}" class="card-img-top" alt="Leader">
+                <div class="card-body">
+                    <h5 class="card-title">Megha</h5>
+                    <p class="card-text">Lead Developer and Java Expert.</p>
+                    <a href="https://www.linkedin.com/in/megha-vastrad" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/m-pic.jpeg' %}." class="card-img-top" alt="Team Member 2">
+                <div class="card-body">
+                    <h5 class="card-title">Amir Hamza</h5>
+                    <p class="card-text">Machine Learning and Djago Python expert.</p>
+                    <a href="https://www.linkedin.com/in/amir-hamza-m-b38451257/" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/namita.jpeg' %}" class="card-img-top" alt="Team Member 3">
+                <div class="card-body">
+                    <h5 class="card-title">Namitha</h5>
+                    <p class="card-text">React and Java Specialist.</p>
+                    <a href="https://www.linkedin.com/in/namitha-nayak-82479b283/" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/danu.jpeg' %}" class="card-img-top" alt="Team Member 4">
+                <div class="card-body">
+                    <h5 class="card-title">Daneshwari</h5>
+                    <p class="card-text">Project Manager and Quality Assurance.</p>
+                    <a href="https://www.linkedin.com/in/danu-konnur-aa1902316" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

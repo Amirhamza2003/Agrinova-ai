@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">We Value Your Feedback</h1>
+    <form method="post" action="{% url 'feedback' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="feedback" class="form-label">Your Feedback</label>
+            <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+</div>
+{% endblock %}
